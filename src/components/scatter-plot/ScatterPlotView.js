@@ -42,7 +42,7 @@ export default class ScatterPlotView extends ChartView {
   }
   // assume max shape extension out of scale range as of circle's radius
   get padding () {
-    const maxR = Math.sqrt(this.config.get('size.range')[1])
+    const maxR = Math.sqrt(this.config.get('size.range')[1]) / 2
     return {left: maxR, top: maxR, right: maxR, bottom: maxR}
   }
 

@@ -42,6 +42,7 @@ export default class NavigationView extends ChartView {
       this._brush = new BrushView({
         container: this.el,
         config: {
+          duration: this._yChart.config.duration,
           isSharedContainer: true,
           margin: this._yChart.config.margin,
           height: this.height,
