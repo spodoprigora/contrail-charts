@@ -96,7 +96,8 @@ describe('Navigation', () => {
   })
 
   describe('Render with minimal config.', () => {
-    xit('should show half line after selection range', (done) => {
+    // TODO
+    xit('should show half line', (done) => {
       chart = new cc.composites.CompositeView({config, container})
       chart.setData(data)
       let navClipPath = container.querySelector('#nav clipPath rect')

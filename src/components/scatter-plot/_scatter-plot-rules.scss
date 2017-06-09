@@ -6,7 +6,6 @@
   $p_point_hovered_cursor: map-get($scatter-plot, "cursorOverPoint");
 
   .point {
-
     circle {
       opacity: $p_point_opacity;
       &:hover {
@@ -20,7 +19,6 @@
       alignment-baseline: middle;
       text-anchor: middle;
     }
-
 
     &:hover {
       stroke-width: $p_point_hovered_edge_width;

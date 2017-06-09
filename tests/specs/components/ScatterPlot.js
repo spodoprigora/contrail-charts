@@ -1,4 +1,4 @@
-/* global cc, describe, it, expect, beforeEach afterEach */
+/* global _, cc, describe, it, expect, beforeEach afterEach */
 
 describe('ScatterPlotView.', () => {
   let config
@@ -242,10 +242,10 @@ describe('ScatterPlotView.', () => {
       chart.setConfig(config)
       let points = container.querySelectorAll('.scatter-plot .point')
       _.each(points, (point, i) => {
-         if (i > 0) {
+        if (i > 0) {
           let pointSize = point.querySelector('text').style.fontSize
           let beforePointSize = points[i - 1].querySelector('text').style.fontSize
-          expect(+pointSize.slice(0, -2) ).toBeGreaterThan(+beforePointSize.slice(0, -2))
+          expect(+pointSize.slice(0, -2)).toBeGreaterThan(+beforePointSize.slice(0, -2))
         }
       })
     })
