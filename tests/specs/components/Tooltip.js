@@ -44,7 +44,7 @@ describe('Tooltip', () => {
         }
       }]}
     data = [
-      {x: 0, a: 2},
+      {x: 0, a: 2.5},
       {x: 1, a: 3},
       {x: 2, a: 5},
       {x: 3, a: 1},
@@ -73,6 +73,27 @@ describe('Tooltip', () => {
         bar.dispatchEvent(event)
         let tooltip = container.querySelector('.tooltip.active')
         expect(tooltip).not.toBeNull()
+        done()
+      })
+    })
+
+    it('checking the title of the tooltip', (done) => {
+      chart = new cc.composites.CompositeView({config, container})
+      chart.setData(data)
+      let bars = container.querySelectorAll('rect.bar')
+
+      observe('attr', bars[bars.length - 1], 'height', () => {
+        let barRect = bars[1].getBoundingClientRect()
+        let eventPoint = {x: Math.ceil(barRect.left), y: Math.ceil(barRect.top)}
+        let event = new MouseEvent('mousemove', {
+          bubbles: true,
+          clientX: eventPoint.x,
+          clientY: eventPoint.y
+        })
+        bars[1].dispatchEvent(event)
+        let tooltip = container.querySelector('.tooltip')
+        let tooltipTitle = tooltip.querySelector('.cc-title').textContent
+        expect(+tooltipTitle).toBe(data[1].x)
         done()
       })
     })

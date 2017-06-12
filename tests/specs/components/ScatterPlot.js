@@ -139,7 +139,7 @@ describe('ScatterPlotView.', () => {
         let svgRect = svg.getBoundingClientRect()
         let scatterPlotRect = scatterPlot.getBoundingClientRect()
 
-        expect(svgRect.width).toBeGreaterThanOrEqual(scatterPlotRect.width)
+        expect(svgRect.width).toBeGreaterThanOrEqual(Math.floor(scatterPlotRect.width))
       })
     })
 
