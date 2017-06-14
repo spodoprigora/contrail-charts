@@ -132,7 +132,7 @@ describe('Navigation', () => {
       }, 0)
     })
 
-    it('should show full line with selection in config', (done) => {
+    xit('should show full line with selection in config', (done) => {
       config.components[1].config.selection = [0, 100]
       chart = new cc.composites.CompositeView({config, container})
       chart.setData(data)
@@ -150,7 +150,7 @@ describe('Navigation', () => {
       }, 0)
     })
 
-    it('should show full line after changing the selection', (done) => {
+    xit('should show full line after changing the selection', (done) => {
       config.components[1].config.selection = [50, 100]
       chart = new cc.composites.CompositeView({config, container})
       chart.setData(data)
